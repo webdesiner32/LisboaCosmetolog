@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetolog Elizabeth</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url('/img/estetichni-kartinki-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li button {
+            background-color: #f39c12;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        nav ul li button:hover {
+            background-color: #d35400;
+        }
+        section {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .btn-book {
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        .btn-book:hover {
+            background-color: #2ecc71;
+        }
+        /* Стиль для підсвічування тексту */
+        .highlight {
+            color: red;
+            transition: color 1s ease;
+        }
+        @media (max-width: 600px) {
+            section {
+                width: 95%;
+                padding: 10px;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>"Cosmetolog Elizabeth"</h1>
+        <nav>
+            <ul>
+                <li><button onclick="highlightText('#services')">Послуги</button></li>
+                <li><button onclick="highlightText('#about')">Про нас</button></li>
+                <li><button onclick="highlightText('#contact')">Контакти</button></li>
+                <li><button onclick="highlightText('#bot')">Телеграм бот</button></li>
+                <li><button onclick="highlightText('#consultation')">Безкоштовна консультація</button></li>
+                <li><button onclick="highlightText('#works')">Роботи</button></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="services">
+        <h2>Наші послуги</h2>
+        <p>Ми пропонуємо широкий спектр послуг: догляд за обличчям, пілінги, масажі, та багато іншого. Наші процедури допоможуть вам виглядати і відчувати себе краще.</p>
+    </section>
+    
+    <section id="about">
+        <h2>Про нас</h2>
+        <p>Наша команда складається з професійних косметологів з багаторічним досвідом. Ми працюємо, щоб ви завжди були задоволені своїм виглядом.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Контакти</h2>
+        <p>Адреса: Ви можете знайти нас за посиланням на <a href="https://g.co/kgs/Hhg8d1h" target="_blank" style="color: #f39c12; font-weight: bold;">Google Карта</a>.</p>
+        <div class="contact-info">
+            <p>Телефон: <a href="tel:915 552 545" style="color: rgb(213, 149, 0);">+38 (012) 345-67-89</a></p>
+            <p>Email: <a href="mailto:info@cosmetolog-elizabeth.ua" style="color: #f39c12;">info@cosmetolog-elizabeth.ua</a></p>
+        </div>
+        <!-- Кнопка для запису на процедуру -->
+        <button class="btn-book" onclick="location.href='tel:+380123456789'">Записатись на процедуру</button>
+    </section>
+    
+    <section id="bot">
+        <h2>Телеграм бот</h2>
+        <p>Підключайтесь до нашого Телеграм-бота, щоб отримувати актуальні новини, знижки, та консультації в один клік! <a href="https://t.me/your_bot_link" target="_blank" style="color: #f39c12;">Підписатись на бот</a>.</p>
+    </section>
+    
+    <section id="consultation">
+        <h2>Одна безкоштовна консультація</h2>
+        <p>Скористайтесь можливістю отримати професійну консультацію безкоштовно! Наші спеціалісти допоможуть визначити, що саме потрібно вашій шкірі.</p>
+        <video src="/video/Tw32krYMVgrPDFHwobTZCH.mp4" controls></video>
+    </section>
+    
+    <section id="works">
+        <h2>Наші роботи</h2>
+        <p>Подивіться відео наших успішних робіт, які демонструють якість наших послуг:</p>
+        <video src="/video/work1.mp4.mp4" controls></video>
+        <video src="/video/work2.mp4.mp4" controls></video>
+        <video src="/video/work3.mp4.mp4" controls></video>
+    </section>
+
+    <script>
+        function highlightText(sectionId) {
+            // Отримуємо елемент
+            var section = document.querySelector(sectionId);
+            // Прокручуємо до елемента
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+            
+            // Додаємо клас для підсвічування
+            section.classList.add('highlight');
+            
+            // Видаляємо клас через 3 секунди
+            setTimeout(function() {
+                section.classList.remove('highlight');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
